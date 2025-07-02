@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-10T18:16:50.479642" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Demo02" source="C:\robot_tests\test_demo02.robot">
+<test id="s1-t1" name="Register New Account" line="12">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-06-10T18:16:50.755931" level="INFO">${RANDOM_NUMBER} = 5338</msg>
+<var>${RANDOM_NUMBER}</var>
+<arg>random.randint(1000, 9999)</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-06-10T18:16:50.755687" elapsed="0.000277"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-06-10T18:16:50.756395" level="INFO">${RANDOM_NUMBER} = 5338</msg>
+<arg>${RANDOM_NUMBER}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-06-10T18:16:50.756202" elapsed="0.000241"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-10T18:16:50.756813" level="INFO">Opening browser 'Chrome' to base url 'https://web-demo.qahive.com/e-commerce/register'.</msg>
+<arg>${REGISTER_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-10T18:16:50.756633" elapsed="1.759763"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-10T18:16:52.516818" elapsed="0.053457"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@name='email']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-10T18:16:52.570614" elapsed="0.020768"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-10T18:16:52.592128" level="INFO">Typing text 'testuser1@example.com' into text field 'xpath=//input[@name='email']'.</msg>
+<arg>xpath=//input[@name='email']</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-10T18:16:52.591784" elapsed="0.267694"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-10T18:16:52.860352" level="INFO">Typing text 'TestPassword123!' into text field 'xpath=//input[@name='password']'.</msg>
+<arg>xpath=//input[@name='password']</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-10T18:16:52.859984" elapsed="0.191612"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-10T18:16:53.052085" level="INFO">Clicking button 'xpath=//button[contains(.,'Submit') or @type='submit']'.</msg>
+<arg>xpath=//button[contains(.,'Submit') or @type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-10T18:16:53.051904" elapsed="0.070751"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/e-commerce</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-06-10T18:16:53.122965" elapsed="0.008873"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2025-06-10T18:16:53.135214" level="INFO">Current location contains '/e-commerce'.</msg>
+<arg>/e-commerce</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2025-06-10T18:16:53.132213" elapsed="0.003065"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-10T18:16:53.135571" elapsed="2.181003"/>
+</kw>
+<doc>Test registration of a new account and verify redirection to eCommerce page</doc>
+<status status="PASS" start="2025-06-10T18:16:50.754434" elapsed="4.562373"/>
+</test>
+<status status="PASS" start="2025-06-10T18:16:50.480786" elapsed="4.836597"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Demo02" id="s1" pass="1" fail="0" skip="0">Test Demo02</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
