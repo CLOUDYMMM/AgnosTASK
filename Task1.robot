@@ -14,9 +14,9 @@ ${PASSWORD}         Test1234!
 # Locators
 ${EMAIL_INPUT}      id=Email
 ${PASSWORD_INPUT}   id=password
-${CONFIRM_PASSWORD_INPUT}   xpath=(//input[@id='password'])[2]
+${CONFIRM_PASSWORD_INPUT}   xpath=(//input[@type='password'])[2]
 ${CONFIRM_BUTTON}   xpath=//button[.//div[text()='Confirm']]
-${SIGNIN_BUTTON}    xpath=//button[contains(@class, '1lnk8p5')]
+${SIGNIN_BUTTON}    xpath=//button[normalize-space(.)='Sign in']
 ${LOGIN_BUTTON}     id=login
 ${LOGOUT_BUTTON}    id=logout
 ${SEARCH_BOX}       id=search
@@ -39,7 +39,9 @@ Open Browser To Login Page
 Register New User
     Input Text      ${EMAIL_INPUT}    ${USERNAME}
     Input Text      ${PASSWORD_INPUT}    ${PASSWORD}
+    Wait Until Element Is Visible    ${CONFIRM_PASSWORD_INPUT}    timeout=10s
     Input Text      ${CONFIRM_PASSWORD_INPUT}    ${PASSWORD}
+    Sleep    1s
     Click Button    ${CONFIRM_BUTTON}
     Sleep    2s
     Wait Until Page Contains    Log-in    timeout=10s

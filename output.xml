@@ -1,548 +1,308 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-07-07T16:58:31.947473" rpa="false" schemaversion="5">
-<suite id="s1" name="Task1" source="C:\workshop\Task1.robot">
-<test id="s1-t1" name="TC-0001 User Registration" line="87">
-<kw name="Open Browser To Signup Page">
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-07-12T13:38:28.996792" rpa="false" schemaversion="5">
+<suite id="s1" name="D" source="C:\AgnosTASK\d.robot">
+<test id="s1-t1" name="TC-0001: User Registration" line="16">
+<kw name="Open Browser To Signup Page" owner="CommonKeywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:32.248320" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/agnos/sign_up/'.</msg>
+<msg time="2025-07-12T13:38:29.302223" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/agnos/sign_up/'.</msg>
 <arg>${SIGNUP_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:58:32.248121" elapsed="5.051514"/>
+<status status="PASS" start="2025-07-12T13:38:29.302023" elapsed="2.205586"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:58:37.299969" elapsed="0.034876"/>
+<status status="PASS" start="2025-07-12T13:38:31.508164" elapsed="0.028278"/>
 </kw>
-<status status="PASS" start="2025-07-07T16:58:32.247466" elapsed="5.087567"/>
+<status status="PASS" start="2025-07-12T13:38:29.301452" elapsed="2.235257"/>
 </kw>
-<kw name="Register New User">
+<kw name="Register New User" owner="CommonKeywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:37.336063" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
+<msg time="2025-07-12T13:38:31.538357" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:58:37.335690" elapsed="0.103367"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:37.439599" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:58:37.439249" elapsed="0.063043"/>
+<status status="PASS" start="2025-07-12T13:38:31.537810" elapsed="0.197970"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:37.502766" level="INFO">Typing text 'Test1234!' into text field 'xpath=(//input[@id='password'])[2]'.</msg>
-<arg>${CONFIRM_PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
+<msg time="2025-07-12T13:38:31.736489" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:58:37.502500" elapsed="0.058458"/>
+<status status="PASS" start="2025-07-12T13:38:31.736110" elapsed="0.117499"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:37.561437" level="INFO">Clicking button 'xpath=//button[.//div[text()='Confirm']]'.</msg>
-<arg>${CONFIRM_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:58:37.561152" elapsed="0.066415"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CONFIRM_PASSWORD_FIELD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-12T13:38:31.854195" elapsed="0.029282"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-12T13:38:31.884032" level="INFO">Typing text 'Test1234!' into text field 'xpath=(//input[@type='password'])[2]'.</msg>
+<arg>${CONFIRM_PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-12T13:38:31.883718" elapsed="0.066683"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-07-07T16:58:39.628410" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2025-07-12T13:38:32.951085" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-07-07T16:58:37.627892" elapsed="2.000622"/>
+<status status="PASS" start="2025-07-12T13:38:31.950613" elapsed="1.000619"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-12T13:38:32.951691" level="INFO">Clicking button 'xpath=//button[normalize-space(.)='Confirm']'.</msg>
+<arg>${REGISTER_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-12T13:38:32.951454" elapsed="0.060099"/>
 </kw>
 <kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:49.857124" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:58:49.857334" level="FAIL">Text 'Log-in' did not appear in 10 seconds.</msg>
+<msg time="2025-07-12T13:38:43.239984" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-12T13:38:43.240216" level="FAIL">Text 'Log-in' did not appear in 10 seconds.</msg>
 <arg>Log-in</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until ``text`` appears on the current page.</doc>
-<status status="FAIL" start="2025-07-07T16:58:39.628668" elapsed="10.230551">Text 'Log-in' did not appear in 10 seconds.</status>
+<status status="FAIL" start="2025-07-12T13:38:33.011960" elapsed="10.230157">Text 'Log-in' did not appear in 10 seconds.</status>
 </kw>
 <kw name="Page Should Not Contain" owner="SeleniumLibrary">
 <arg>The password must be at least 8 characters long</arg>
 <doc>Verifies the current page does not contain ``text``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:58:49.859384" elapsed="0.000037"/>
+<status status="NOT RUN" start="2025-07-12T13:38:43.242327" elapsed="0.000039"/>
 </kw>
-<status status="FAIL" start="2025-07-07T16:58:37.335402" elapsed="12.524129">Text 'Log-in' did not appear in 10 seconds.</status>
+<arg>test@gmail.com</arg>
+<arg>Test1234!</arg>
+<status status="FAIL" start="2025-07-12T13:38:31.537354" elapsed="11.705149">Text 'Log-in' did not appear in 10 seconds.</status>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>Login</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:58:49.859759" elapsed="0.000033"/>
+<status status="NOT RUN" start="2025-07-12T13:38:43.242773" elapsed="0.000037"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:58:49.860086" elapsed="2.176330"/>
+<status status="PASS" start="2025-07-12T13:38:43.243105" elapsed="2.215993"/>
 </kw>
+<doc>Verify that a new user can register successfully.</doc>
 <tag>Registration</tag>
-<status status="FAIL" start="2025-07-07T16:58:32.246820" elapsed="19.790187">Text 'Log-in' did not appear in 10 seconds.</status>
+<status status="FAIL" start="2025-07-12T13:38:29.300751" elapsed="16.158558">Text 'Log-in' did not appear in 10 seconds.</status>
 </test>
-<test id="s1-t2" name="TC-0002 User Login" line="94">
-<kw name="Open Browser To Login Page">
+<test id="s1-t2" name="TC-0002: User Login and Logout" line="23">
+<kw name="Open Browser To Login Page" owner="CommonKeywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:52.038647" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
+<msg time="2025-07-12T13:38:45.460912" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
 <arg>${LOGIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:58:52.038443" elapsed="2.532271"/>
+<status status="PASS" start="2025-07-12T13:38:45.460691" elapsed="2.225298"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:58:54.570933" elapsed="0.030889"/>
+<status status="PASS" start="2025-07-12T13:38:47.686252" elapsed="0.025876"/>
 </kw>
-<status status="PASS" start="2025-07-07T16:58:52.038187" elapsed="2.563793"/>
+<status status="PASS" start="2025-07-12T13:38:45.460460" elapsed="2.251832"/>
 </kw>
-<kw name="Login With Valid Credentials">
+<kw name="Login With Valid Credentials" owner="CommonKeywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:54.602824" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
+<msg time="2025-07-12T13:38:47.713216" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${VALID_USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:58:54.602598" elapsed="0.096766"/>
+<status status="PASS" start="2025-07-12T13:38:47.712933" elapsed="0.119929"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:54.699849" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
+<msg time="2025-07-12T13:38:47.833646" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${VALID_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:58:54.699565" elapsed="0.061686"/>
+<status status="PASS" start="2025-07-12T13:38:47.833144" elapsed="0.062491"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:54.761700" level="INFO">Clicking button 'xpath=//button[contains(@class, '1lnk8p5')]'.</msg>
-<msg time="2025-07-07T16:58:54.902650" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:58:54.902794" level="FAIL">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
+<msg time="2025-07-12T13:38:47.896073" level="INFO">Clicking button 'xpath=//button[normalize-space(.)='Sign in']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-07-07T16:58:54.761437" elapsed="0.143119">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
+<status status="PASS" start="2025-07-12T13:38:47.895819" elapsed="0.068339"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<msg time="2025-07-12T13:38:50.849266" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=138.0.7204.101)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff73f5e6f75+76917]
+	GetHandleVerifier [0x0x7ff73f5e6fd0+77008]
+	(No symbol) [0x0x7ff73f399dea]
+	(No symbol) [0x0x7ff73f372191]
+	(No symbol) [0x0x7ff73f41f83e]
+	(No symbol) [0x0x7ff73f43ff72]
+	(No symbol) [0x0x7ff73f418243]
+	(No symbol) [0x0x7ff73f3e1431]
+	(No symbol) [0x0x7ff73f3e21c3]
+	GetHandleVerifier [0x0x7ff73f8bd2ad+3051437]
+	GetHandleVerifier [0x0x7ff73f8b7903+3028483]
+	GetHandleVerifier [0x0x7ff73f8d589d+3151261]
+	GetHandleVerifier [0x0x7ff73f60183e+185662]
+	GetHandleVerifier [0x0x7ff73f6096ff+218111]
+	GetHandleVerifier [0x0x7ff73f5efaf4+112628]
+	GetHandleVerifier [0x0x7ff73f5efca9+113065]
+	GetHandleVerifier [0x0x7ff73f5d6c78+10616]
+	BaseThreadInitThunk [0x0x7ff98615259d+29]
+	RtlUserThreadStart [0x0x7ff986d6af78+40]
+</msg>
+<msg time="2025-07-12T13:38:50.850604" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=138.0.7204.101)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff73f5e6f75+76917]
+	GetHandleVerifier [0x0x7ff73f5e6fd0+77008]
+	(No symbol) [0x0x7ff73f399dea]
+	(No symbol) [0x0x7ff73f372191]
+	(No symbol) [0x0x7ff73f41f83e]
+	(No symbol) [0x0x7ff73f43ff72]
+	(No symbol) [0x0x7ff73f418243]
+	(No symbol) [0x0x7ff73f3e1431]
+	(No symbol) [0x0x7ff73f3e21c3]
+	GetHandleVerifier [0x0x7ff73f8bd2ad+3051437]
+	GetHandleVerifier [0x0x7ff73f8b7903+3028483]
+	GetHandleVerifier [0x0x7ff73f8d589d+3151261]
+	GetHandleVerifier [0x0x7ff73f60183e+185662]
+	GetHandleVerifier [0x0x7ff73f6096ff+218111]
+	GetHandleVerifier [0x0x7ff73f5efaf4+112628]
+	GetHandleVerifier [0x0x7ff73f5efca9+113065]
+	GetHandleVerifier [0x0x7ff73f5d6c78+10616]
+	BaseThreadInitThunk [0x0x7ff98615259d+29]
+	RtlUserThreadStart [0x0x7ff986d6af78+40]
+</msg>
 <arg>${DASHBOARD_URL}</arg>
 <doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:58:54.904707" elapsed="0.000027"/>
-</kw>
-<status status="FAIL" start="2025-07-07T16:58:54.602319" elapsed="0.302502">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
+<status status="FAIL" start="2025-07-12T13:38:47.964450" elapsed="2.929177">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=138.0.7204.101)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff73f5e6f75+76917]
+	GetHandleVerifier [0x0x7ff73f5e6fd0+77008]
+	(No symbol) [0x0x7ff73f399dea]
+	(No symbol) [0x0x7ff73f372191]
+	(No symbol) [0x0x7ff73f41f83e]
+	(No symbol) [0x0x7ff73f43ff72]
+	(No symbol) [0x0x7ff73f418243]
+	(No symbol) [0x0x7ff73f3e1431]
+	(No symbol) [0x0x7ff73f3e21c3]
+	GetHandleVerifier [0x0x7ff73f8bd2ad+3051437]
+	GetHandleVerifier [0x0x7ff73f8b7903+3028483]
+	GetHandleVerifier [0x0x7ff73f8d589d+3151261]
+	GetHandleVerifier [0x0x7ff73f60183e+185662]
+	GetHandleVerifier [0x0x7ff73f6096ff+218111]
+	GetHandleVerifier [0x0x7ff73f5efaf4+112628]
+	GetHandleVerifier [0x0x7ff73f5efca9+113065]
+	GetHandleVerifier [0x0x7ff73f5d6c78+10616]
+	BaseThreadInitThunk [0x0x7ff98615259d+29]
+	RtlUserThreadStart [0x0x7ff986d6af78+40]
+</status>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>Dashboard</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:58:54.905032" elapsed="0.000032"/>
+<status status="NOT RUN" start="2025-07-12T13:38:50.893897" elapsed="0.000041"/>
+</kw>
+<status status="FAIL" start="2025-07-12T13:38:47.712669" elapsed="3.181429">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=138.0.7204.101)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff73f5e6f75+76917]
+	GetHandleVerifier [0x0x7ff73f5e6fd0+77008]
+	(No symbol) [0x0x7ff73f399dea]
+	(No symbol) [0x0x7ff73f372191]
+	(No symbol) [0x0x7ff73f41f83e]
+	(No symbol) [0x0x7ff73f43ff72]
+	(No symbol) [0x0x7ff73f418243]
+	(No symbol) [0x0x7ff73f3e1431]
+	(No symbol) [0x0x7ff73f3e21c3]
+	GetHandleVerifier [0x0x7ff73f8bd2ad+3051437]
+	GetHandleVerifier [0x0x7ff73f8b7903+3028483]
+	GetHandleVerifier [0x0x7ff73f8d589d+3151261]
+	GetHandleVerifier [0x0x7ff73f60183e+185662]
+	GetHandleVerifier [0x0x7ff73f6096ff+218111]
+	GetHandleVerifier [0x0x7ff73f5efaf4+112628]
+	GetHandleVerifier [0x0x7ff73f5efca9+113065]
+	GetHandleVerifier [0x0x7ff73f5d6c78+10616]
+	BaseThreadInitThunk [0x0x7ff98615259d+29]
+	RtlUserThreadStart [0x0x7ff986d6af78+40]
+</status>
+</kw>
+<kw name="Logout User" owner="CommonKeywords">
+<status status="NOT RUN" start="2025-07-12T13:38:50.894470" elapsed="0.000039"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:58:54.905323" elapsed="2.130818"/>
+<status status="PASS" start="2025-07-12T13:38:50.894832" elapsed="2.064756"/>
 </kw>
+<doc>Verify that a registered user can log in and out.</doc>
 <tag>Login</tag>
-<status status="FAIL" start="2025-07-07T16:58:52.037766" elapsed="4.998607">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</test>
-<test id="s1-t3" name="TC-0003 User Logout" line="101">
-<kw name="Open Browser To Login Page">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:57.037892" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
-<arg>${LOGIN_URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:58:57.037701" elapsed="2.326357"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:58:59.364890" elapsed="0.037213"/>
-</kw>
-<status status="PASS" start="2025-07-07T16:58:57.037456" elapsed="2.364766"/>
-</kw>
-<kw name="Login With Valid Credentials">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:59.403050" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:58:59.402803" elapsed="0.129831"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:59.533209" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:58:59.532910" elapsed="0.075476"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:58:59.609046" level="INFO">Clicking button 'xpath=//button[contains(@class, '1lnk8p5')]'.</msg>
-<msg time="2025-07-07T16:58:59.760957" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:58:59.761183" level="FAIL">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-07-07T16:58:59.608616" elapsed="0.153712">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:58:59.762497" elapsed="0.000030"/>
-</kw>
-<status status="FAIL" start="2025-07-07T16:58:59.402542" elapsed="0.360071">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Logout User">
-<status status="NOT RUN" start="2025-07-07T16:58:59.762854" elapsed="0.000031"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<arg>Login</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:58:59.763051" elapsed="0.000035"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:58:59.763305" elapsed="2.129561"/>
-</kw>
 <tag>Logout</tag>
-<status status="FAIL" start="2025-07-07T16:58:57.037078" elapsed="4.856056">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
+<status status="FAIL" start="2025-07-12T13:38:45.459973" elapsed="7.499942">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=138.0.7204.101)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff73f5e6f75+76917]
+	GetHandleVerifier [0x0x7ff73f5e6fd0+77008]
+	(No symbol) [0x0x7ff73f399dea]
+	(No symbol) [0x0x7ff73f372191]
+	(No symbol) [0x0x7ff73f41f83e]
+	(No symbol) [0x0x7ff73f43ff72]
+	(No symbol) [0x0x7ff73f418243]
+	(No symbol) [0x0x7ff73f3e1431]
+	(No symbol) [0x0x7ff73f3e21c3]
+	GetHandleVerifier [0x0x7ff73f8bd2ad+3051437]
+	GetHandleVerifier [0x0x7ff73f8b7903+3028483]
+	GetHandleVerifier [0x0x7ff73f8d589d+3151261]
+	GetHandleVerifier [0x0x7ff73f60183e+185662]
+	GetHandleVerifier [0x0x7ff73f6096ff+218111]
+	GetHandleVerifier [0x0x7ff73f5efaf4+112628]
+	GetHandleVerifier [0x0x7ff73f5efca9+113065]
+	GetHandleVerifier [0x0x7ff73f5d6c78+10616]
+	BaseThreadInitThunk [0x0x7ff98615259d+29]
+	RtlUserThreadStart [0x0x7ff986d6af78+40]
+</status>
 </test>
-<test id="s1-t4" name="TC-0004 Navigation Between Tabs" line="109">
-<kw name="Open Browser To Login Page">
+<test id="s1-t3" name="TC-0003: Navigation Between Tabs" line="29">
+<kw name="Open Browser To Login Page" owner="CommonKeywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:01.894483" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
+<msg time="2025-07-12T13:38:52.961903" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
 <arg>${LOGIN_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:59:01.894293" elapsed="2.313214"/>
+<status status="PASS" start="2025-07-12T13:38:52.961702" elapsed="2.179444"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:59:04.207698" elapsed="0.088718"/>
+<status status="PASS" start="2025-07-12T13:38:55.141404" elapsed="0.042156"/>
 </kw>
-<status status="PASS" start="2025-07-07T16:59:01.894059" elapsed="2.402536"/>
+<status status="PASS" start="2025-07-12T13:38:52.961452" elapsed="2.222218"/>
 </kw>
-<kw name="Login With Valid Credentials">
+<kw name="Login With Valid Credentials" owner="CommonKeywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:04.297798" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
+<msg time="2025-07-12T13:38:55.184456" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${VALID_USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:04.297422" elapsed="0.155888"/>
+<status status="PASS" start="2025-07-12T13:38:55.184255" elapsed="0.114960"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:04.453730" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
+<msg time="2025-07-12T13:38:55.299752" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${VALID_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:04.453479" elapsed="0.060551"/>
+<status status="PASS" start="2025-07-12T13:38:55.299444" elapsed="0.082274"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:04.514612" level="INFO">Clicking button 'xpath=//button[contains(@class, '1lnk8p5')]'.</msg>
-<msg time="2025-07-07T16:59:04.670795" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:59:04.670948" level="FAIL">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
+<msg time="2025-07-12T13:38:55.382231" level="INFO">Clicking button 'xpath=//button[normalize-space(.)='Sign in']'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-07-07T16:59:04.514297" elapsed="0.157584">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
+<status status="PASS" start="2025-07-12T13:38:55.381967" elapsed="0.060947"/>
 </kw>
 <kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:59:04.672033" elapsed="0.000027"/>
-</kw>
-<status status="FAIL" start="2025-07-07T16:59:04.297035" elapsed="0.375104">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Navigate Tabs">
-<status status="NOT RUN" start="2025-07-07T16:59:04.672366" elapsed="0.000029"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:59:04.672599" elapsed="2.123729"/>
-</kw>
-<tag>Navigation</tag>
-<status status="FAIL" start="2025-07-07T16:59:01.893671" elapsed="4.902951">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</test>
-<test id="s1-t5" name="TC-0005 Search for a Record" line="116">
-<kw name="Open Browser To Login Page">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:06.798302" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
-<arg>${LOGIN_URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:59:06.798106" elapsed="2.099966"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:59:08.898463" elapsed="0.035022"/>
-</kw>
-<status status="PASS" start="2025-07-07T16:59:06.797861" elapsed="2.135741"/>
-</kw>
-<kw name="Login With Valid Credentials">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:08.934355" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:08.934155" elapsed="0.214270"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:09.149026" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:09.148699" elapsed="0.071412"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:09.220694" level="INFO">Clicking button 'xpath=//button[contains(@class, '1lnk8p5')]'.</msg>
-<msg time="2025-07-07T16:59:09.370875" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:59:09.371056" level="FAIL">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-07-07T16:59:09.220375" elapsed="0.152086">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:59:09.372660" elapsed="0.000042"/>
-</kw>
-<status status="FAIL" start="2025-07-07T16:59:08.933911" elapsed="0.438912">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Search For Record">
-<status status="NOT RUN" start="2025-07-07T16:59:09.373164" elapsed="0.000057"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:59:09.373538" elapsed="2.161955"/>
-</kw>
-<tag>Search</tag>
-<status status="FAIL" start="2025-07-07T16:59:06.797416" elapsed="4.738342">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</test>
-<test id="s1-t6" name="TC-0006 Filter Records by Triage" line="123">
-<kw name="Open Browser To Login Page">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:11.537457" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
-<arg>${LOGIN_URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:59:11.537252" elapsed="2.071740"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:59:13.609261" elapsed="0.032984"/>
-</kw>
-<status status="PASS" start="2025-07-07T16:59:11.536995" elapsed="2.105355"/>
-</kw>
-<kw name="Login With Valid Credentials">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:13.643216" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:13.643034" elapsed="0.204187"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:13.847690" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:13.847439" elapsed="0.073429"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:13.921433" level="INFO">Clicking button 'xpath=//button[contains(@class, '1lnk8p5')]'.</msg>
-<msg time="2025-07-07T16:59:14.068324" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:59:14.068471" level="FAIL">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-07-07T16:59:13.921216" elapsed="0.148212">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:59:14.069597" elapsed="0.000031"/>
-</kw>
-<status status="FAIL" start="2025-07-07T16:59:13.642805" elapsed="0.426919">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Filter By Triage">
-<status status="NOT RUN" start="2025-07-07T16:59:14.069976" elapsed="0.000029"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:59:14.070248" elapsed="2.125559"/>
-</kw>
-<tag>Filter</tag>
-<status status="FAIL" start="2025-07-07T16:59:11.536534" elapsed="4.659507">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</test>
-<test id="s1-t7" name="TC-0007 Filter Records by Date" line="130">
-<kw name="Open Browser To Login Page">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:16.197312" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
-<arg>${LOGIN_URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:59:16.197147" elapsed="2.176341"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:59:18.374147" elapsed="0.037826"/>
-</kw>
-<status status="PASS" start="2025-07-07T16:59:16.196906" elapsed="2.215232"/>
-</kw>
-<kw name="Login With Valid Credentials">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:18.413194" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:18.412913" elapsed="0.111606"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:18.525085" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:18.524760" elapsed="0.064492"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:18.589822" level="INFO">Clicking button 'xpath=//button[contains(@class, '1lnk8p5')]'.</msg>
-<msg time="2025-07-07T16:59:18.725674" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:59:18.725816" level="FAIL">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-07-07T16:59:18.589469" elapsed="0.137348">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:59:18.726978" elapsed="0.000033"/>
-</kw>
-<status status="FAIL" start="2025-07-07T16:59:18.412511" elapsed="0.314591">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Filter By Date">
-<status status="NOT RUN" start="2025-07-07T16:59:18.727395" elapsed="0.000071"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:59:18.727740" elapsed="2.145135"/>
-</kw>
-<tag>Filter</tag>
-<status status="FAIL" start="2025-07-07T16:59:16.196561" elapsed="4.676585">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</test>
-<test id="s1-t8" name="TC-0008 Filter Records by Channel" line="137">
-<kw name="Open Browser To Login Page">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:20.874635" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
-<arg>${LOGIN_URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:59:20.874445" elapsed="2.127079"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:59:23.001901" elapsed="0.040579"/>
-</kw>
-<status status="PASS" start="2025-07-07T16:59:20.874207" elapsed="2.168478"/>
-</kw>
-<kw name="Login With Valid Credentials">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:23.043867" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:23.043566" elapsed="0.230964"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:23.275504" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:23.275001" elapsed="0.065532"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:23.341218" level="INFO">Clicking button 'xpath=//button[contains(@class, '1lnk8p5')]'.</msg>
-<msg time="2025-07-07T16:59:23.475536" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:59:23.475755" level="FAIL">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-07-07T16:59:23.340790" elapsed="0.136077">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:59:23.477023" elapsed="0.000031"/>
-</kw>
-<status status="FAIL" start="2025-07-07T16:59:23.043143" elapsed="0.433997">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Filter By Channel">
-<status status="NOT RUN" start="2025-07-07T16:59:23.477425" elapsed="0.000041"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:59:23.477755" elapsed="2.138747"/>
-</kw>
-<tag>Filter</tag>
-<status status="FAIL" start="2025-07-07T16:59:20.873830" elapsed="4.742909">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</test>
-<test id="s1-t9" name="TC-0009 Download Records" line="144">
-<kw name="Open Browser To Login Page">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:25.618124" level="INFO">Opening browser 'Chrome' to base url 'https://dev.app.agnoshealth.com/ai_dashboard/login'.</msg>
-<arg>${LOGIN_URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-07T16:59:25.617934" elapsed="2.326500"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-07-07T16:59:27.944939" elapsed="0.058866"/>
-</kw>
-<status status="PASS" start="2025-07-07T16:59:25.617687" elapsed="2.386403"/>
-</kw>
-<kw name="Login With Valid Credentials">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:28.005690" level="INFO">Typing text 'test@gmail.com' into text field 'id=Email'.</msg>
-<arg>${EMAIL_INPUT}</arg>
-<arg>${USERNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:28.005291" elapsed="0.160821"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:28.166828" level="INFO">Typing text 'Test1234!' into text field 'id=password'.</msg>
-<arg>${PASSWORD_INPUT}</arg>
-<arg>${PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-07T16:59:28.166444" elapsed="0.093905"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-07-07T16:59:28.260870" level="INFO">Clicking button 'xpath=//button[contains(@class, '1lnk8p5')]'.</msg>
-<msg time="2025-07-07T16:59:28.440677" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-07-07T16:59:28.440829" level="FAIL">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-07-07T16:59:28.260545" elapsed="0.181275">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Wait Until Location Is" owner="SeleniumLibrary">
-<arg>${DASHBOARD_URL}</arg>
-<doc>Waits until the current URL is ``expected``.</doc>
-<status status="NOT RUN" start="2025-07-07T16:59:28.442007" elapsed="0.000031"/>
-</kw>
-<status status="FAIL" start="2025-07-07T16:59:28.004751" elapsed="0.437379">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</kw>
-<kw name="Download Record As CSV">
-<status status="NOT RUN" start="2025-07-07T16:59:28.442406" elapsed="0.000038"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-07-07T16:59:28.442723" elapsed="2.116198"/>
-</kw>
-<tag>Download</tag>
-<status status="FAIL" start="2025-07-07T16:59:25.617279" elapsed="4.941907">Button with locator 'xpath=//button[contains(@class, '1lnk8p5')]' not found.</status>
-</test>
-<status status="FAIL" start="2025-07-07T16:58:31.948625" elapsed="58.611544"/>
-</suite>
-<statistics>
-<total>
-<stat pass="0" fail="9" skip="0">All Tests</stat>
-</total>
-<tag>
-<stat pass="0" fail="1" skip="0">Download</stat>
-<stat pass="0" fail="3" skip="0">Filter</stat>
-<stat pass="0" fail="1" skip="0">Login</stat>
-<stat pass="0" fail="1" skip="0">Logout</stat>
-<stat pass="0" fail="1" skip="0">Navigation</stat>
-<stat pass="0" fail="1" skip="0">Registration</stat>
-<stat pass="0" fail="1" skip="0">Search</stat>
-</tag>
-<suite>
-<stat name="Task1" id="s1" pass="0" fail="9" skip="0">Task1</stat>
-</suite>
-</statistics>
-<errors>
-</errors>
-</robot>
+<msg time="2025-07-12T13:38:56.277669" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)': /session/812ed47f819f63a196e20a41d3864893/url</msg>
+<msg time="2025-07-12T13:39:00.361747" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000207DD044E90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/812ed47f819f63a196e20a41d3864893/url</msg>
+<msg time="2025-07-12T13:39:04.466193" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000207DD045350&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/812ed47f819f63a196e20a41d3864893/url</msg>
+<msg time="2025-07-12T13:39:12.656853" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000207DCF7EE00&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/812ed47f819f63a196e20a41d3864893/screenshot</msg>
+<msg time="2025-07-12T13:39:16.754787" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000207DCF7E9C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/812ed47f819f63a196e20a41d3864893/screenshot</msg>
+<msg time="2025-07-12T13:39:20.852349" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000207DCF7DE10&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /session/812ed47f819f63a196e20a41d3864893/screenshot
