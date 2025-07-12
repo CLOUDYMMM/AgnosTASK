@@ -1,0 +1,32 @@
+# Robot Framework outputs
+output.xml
+log.html
+report.html
+interactive_console_output.xml
+
+# Screenshots
+selenium-screenshot-*.png
+screenshots/
+
+# IDE files
+.vscode/
+.cursor/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp 
